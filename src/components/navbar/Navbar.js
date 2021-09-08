@@ -26,9 +26,6 @@ function Navbar() {
                         <li className="nav-item">
                             <NavLink className="nav-link" exact to="/profile">Profile</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" exact to="#">Search</NavLink>
-                        </li>
                     </ul>
                 </div>
             </div>

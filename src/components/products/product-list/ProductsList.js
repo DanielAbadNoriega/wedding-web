@@ -1,54 +1,64 @@
 import { Component } from "react";
-/* import Searchbar from "../../search/Searchbar";  */
+import Searchbar from "../../search/Searchbar";
 import ProductItem from "../product-item/ProductItem";
 import productsService from "../../../services/products-service";
 
-
 class ProductsList extends Component {
+	state = {
+		search: "",
+		products: [],
+	};
 
-    state = {
-        search: '',
-        products: []
-    }
+	componentDidMount() {
+		productsService
+			.list(this.state.search)
+			.then((data) => {
+				this.setState({
+					products: data,
+				});
+			})
+			.catch((error) => console.error(error));
+	}
 
-    componentDidMount () {
-        productsService.list()
-            .then(products => this.setState({products}))
-            .catch(error => console.error(error))
-    }
+	handleSearch(text) {
+		this.setState({
+			search: text,
+		});
+	}
 
-    handleSearch(text) {
-        this.setState({
-            search: text
+    handleOnSearch() {
+        console.log('entro')
+        productsService.list(this.state.search)
+            .then(data => {
+                this.setState({
+                    products: data,
+                })
         })
     }
 
-    render () {
+	render() {
+		console.log(this.state.products);
+		return (
+			<div>
+				<Searchbar
+					value={this.state.search}
+                    onSearch={() => this.handleOnSearch()}
+					onChange={(text) => this.handleSearch(text)}
+				/>
+				<ul className="container">
+					{this.state.products.length !== 0 &&
+						this.state.products.map((product) => (
+							<ProductItem {...product} key={product.id} />
+						))}
+				</ul>
 
-/*         const productFiltered = this.state.products.filter( p => {
-            return p.name.toLowerCase().includes(this.state.search.toLowerCase())
-        }) */
-
-        const { products } = this.state 
-
-        return (
-            <div>
-{/*                 <Searchbar 
-                value={this.state.search}  
-                onSearch={(text) => this.handleSearch(text)}/>
-                <ul>
-                    {productFiltered.map(product => 
-                    <ProductItem {...product} key={product.id} />)}
-                </ul>  */}
-
-                <ul>
+				{/*                 <ul className="container">
                     {products.map(product => 
                     <ProductItem {...product} key={product.id} />)}
-                </ul>
-            </div>
-        )
-    }
-
+                </ul> */}
+			</div>
+		);
+	}
 }
 
 export default ProductsList;
