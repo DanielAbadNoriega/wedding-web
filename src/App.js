@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router";
 import Home from "./components/home/Home";
 import Navbar from "./components/navbar/Navbar";
+import ProductsList from "./components/products/product-list/ProductsList";
 
 
 function App() {
@@ -12,9 +13,7 @@ function App() {
 
                 <Route exact path="/" component={Home}/>
 
-                <Route exact path="/products">
-                    Shop
-                </Route>
+                <Route exact path="/products" component={ProductsList} />
 
                 <Route exact path="#">
                     Wishlist
