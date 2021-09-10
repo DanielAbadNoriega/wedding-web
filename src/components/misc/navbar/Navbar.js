@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Logout from "../../logout/Logout";
 
 function Navbar() {
 
@@ -27,6 +28,7 @@ function Navbar() {
                             <NavLink className="nav-link" exact to="/profile">Profile</NavLink>
                         </li>
                     </ul>
+                    <Logout/>
                 </div>
             </div>
         </nav>

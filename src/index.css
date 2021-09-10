@@ -1,3 +1,7 @@
 a.active {
   color: #bea46d !important ;
 }
+
+body {
+  padding: 20px;
+}

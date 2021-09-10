@@ -2,6 +2,7 @@ import { Component } from "react";
 import Searchbar from "../../search/Searchbar";
 import ProductItem from "../product-item/ProductItem";
 import productsService from "../../../services/products-service";
+import 'antd-mobile/dist/antd-mobile.css';
 
 class ProductsList extends Component {
 	state = {
@@ -27,7 +28,6 @@ class ProductsList extends Component {
 	}
 
     handleOnSearch() {
-        console.log('entro')
         productsService.list(this.state.search)
             .then(data => {
                 this.setState({
@@ -37,7 +37,6 @@ class ProductsList extends Component {
     }
 
 	render() {
-		console.log(this.state.products);
 		return (
 			<div>
 				<Searchbar
@@ -51,11 +50,6 @@ class ProductsList extends Component {
 							<ProductItem {...product} key={product.id} />
 						))}
 				</ul>
-
-				{/*                 <ul className="container">
-                    {products.map(product => 
-                    <ProductItem {...product} key={product.id} />)}
-                </ul> */}
 			</div>
 		);
 	}
