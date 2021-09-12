@@ -1,11 +1,8 @@
 import React from "react";
 
-function Searchbar ({ onChange, onSearch, value }) {
+function Searchbar ({ onChange, value }) {
     return (
-        <div>
-            <input type="text" value={value} onChange={(event) => onChange(event.target.value)} />
-            <button onClick={onSearch}>Search!</button>
-        </div>
+        <input type="text" value={value} onChange={(event) => onChange(event.target.value)} />
     )
 }
 

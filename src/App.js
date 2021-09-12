@@ -1,9 +1,10 @@
+import './App.css'
 import { Redirect, Route, Switch } from "react-router";
-import Home from "./components/home/Home";
+import Home from "./components/misc/home/Home";
 import Login from "./components/login/Login";
 import Navbar from "./components/misc/navbar/Navbar";
-//import ProductsListHooks from "./components/products/product-list/ProductsListHooks";
 import ProductsList from "./components/products/product-list/ProductsList";
+import CreateUser from "./components/user/create-user/CreateUser"
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
 
                 <Route exact path="/" component={Home}/>
 
-                <Route exact path="/products" component={ProductsList} />
+                <Route exact path="/products" component={ProductsList
+                } />
 
                 <Route exact path="#">
                     Wishlist
@@ -26,6 +28,8 @@ function App() {
                 </Route>
 
                 <Route exact path="/profile" component={Login} />
+
+                <Route exact path="/user" component={CreateUser} />
 
                 <Redirect to="/" />
             </Switch>

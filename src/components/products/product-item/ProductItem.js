@@ -11,7 +11,7 @@ function ProductItem({
 	comments,
 }) {
 	return (
-		<div className="ProductItem card">
+		<div className="ProductItem card mt-2">
 			<img src={images} alt={title} className="avatar card-img-top" />
 			<div className="card-body">
 				<h5 className="card-title">{title}</h5>

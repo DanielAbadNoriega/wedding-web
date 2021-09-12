@@ -1,58 +1,40 @@
-import { Component } from "react";
+import productsService from "../../../services/products-service";
 import Searchbar from "../../search/Searchbar";
 import ProductItem from "../product-item/ProductItem";
-import productsService from "../../../services/products-service";
-import 'antd-mobile/dist/antd-mobile.css';
+import { useEffect, useState} from 'react';
 
-class ProductsList extends Component {
-	state = {
-		search: "",
-		products: [],
-	};
+function ProductsList () {
+    const [products, setProducts] = useState([]);
+    const [search, setSearch] = useState("");
 
-	componentDidMount() {
-		productsService
-			.list(this.state.search)
-			.then((data) => {
-				this.setState({
-					products: data,
-				});
-			})
-			.catch((error) => console.error(error));
+
+    useEffect(() => {
+        productsService
+            .list(search)
+            .then((data) => {
+                setProducts(data);
+            })
+            .catch((error) => console.error(error))
+    },[search]);
+
+    function handleSearch(text) {
+        setSearch(text);
 	}
 
-	handleSearch(text) {
-		this.setState({
-			search: text,
-		});
-	}
-
-    handleOnSearch() {
-        productsService.list(this.state.search)
-            .then(data => {
-                this.setState({
-                    products: data,
-                })
-        })
-    }
-
-	render() {
-		return (
-			<div>
-				<Searchbar
-					value={this.state.search}
-                    onSearch={() => this.handleOnSearch()}
-					onChange={(text) => this.handleSearch(text)}
-				/>
-				<ul className="container">
-					{this.state.products.length !== 0 &&
-						this.state.products.map((product) => (
-							<ProductItem {...product} key={product.id} />
-						))}
-				</ul>
-			</div>
-		);
-	}
+    return (
+        <div>
+        <Searchbar
+            value={search}
+            onChange={(text) => handleSearch(text)}
+        />
+        <ul className="container">
+            {products.length !== 0 &&
+                products.map((product) => (
+                    <ProductItem {...product} key={product.id} />
+                ))}
+        </ul>
+    </div>
+    )
 }
 
 export default ProductsList;

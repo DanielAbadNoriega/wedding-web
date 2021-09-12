@@ -11,7 +11,7 @@ function Logout () {
     }
 
     return (              
-        <button onClick={handleLogout} className="btn btn-danger btn-sm">Logout</button>
+        <button onClick={handleLogout} className="btn btn-danger btn-sm fa fa-sign-out mt-1" aria-hidden="true"> Logout</button>
     )
 }
 

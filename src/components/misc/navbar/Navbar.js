@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Logout from "../../logout/Logout";
 
 function Navbar() {
 
@@ -13,22 +12,21 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/">Home</NavLink>
+                            <NavLink className="nav-link fa fa-home" aria-hidden="true" exact to="/"> Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/products">Shop</NavLink>
+                            <NavLink className="nav-link fa fa-gift" aria-hidden="true" exact to="/products"> Shop</NavLink>
                         </li>
                         <li className="nav-item">
                             <NavLink className="nav-link" exact to="#">Wishlist</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/order">Bag</NavLink>
+                            <NavLink className="nav-link fa fa-shopping-bag" aria-hidden="true" exact to="/order"> Bag</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" exact to="/profile">Profile</NavLink>
+                            <NavLink className="nav-link fa fa-user" aria-hidden="true" exact to="/profile"> Profile</NavLink>
                         </li>
                     </ul>
-                    <Logout/>
                 </div>
             </div>
         </nav>
