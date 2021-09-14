@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext} from "../../../contexts/CartContext"
+
 
 function ProductItem({
 	title,
@@ -9,7 +12,25 @@ function ProductItem({
 	images,
 	rating,
 	comments,
+	id
 }) {
+
+	const {createProduct } = useContext(CartContext);
+
+	const handleCreateProduct = () => {
+	  createProduct({
+		title,
+		category,
+		description,
+		price,
+		images,
+		rating,
+		comments,
+		id,
+		quantity: 1,
+	  });
+	};
+
 	return (
 		<div className="ProductItem card mt-2">
 			<img src={images} alt={title} className="avatar card-img-top" />
@@ -23,6 +44,7 @@ function ProductItem({
 				<Link to="#" className="btn btn-primary">
 					Go somewhere
 				</Link>
+				<button className="btn btn-success fa fa-shopping-bag" onClick={handleCreateProduct}></button>
 			</div>
 		</div>
 	);

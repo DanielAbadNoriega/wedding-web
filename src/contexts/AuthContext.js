@@ -14,10 +14,10 @@ export function AuthContextProvider({ children }) {
         if (!userId) {
             history.push('/login')
         } else {
-            userService.profile(user)
+            userService.profile()
                 .then((user) =>setUser(user))
         } 
-    }, [history, user])
+    }, [history])
 
     function login(user) {
         localStorage.setItem('user', user.id)

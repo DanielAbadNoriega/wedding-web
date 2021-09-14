@@ -6,7 +6,7 @@ const logout= () => http.post('/logout')
 
 const create = (user) => http.post('/users', user)
 
-const profile = (user) => http.get('/profile', user)
+const profile = () => http.get('/profile')
 
 const service = {
     login,

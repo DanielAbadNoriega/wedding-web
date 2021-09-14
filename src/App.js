@@ -7,39 +7,42 @@ import ProductsList from "./components/products/product-list/ProductsList";
 import CreateUser from "./components/user/create-user/CreateUser"
 import Profile from './components/user/profile/Profile';
 import { AuthContextProvider } from './contexts/AuthContext';
+import { CartContextProvider } from './contexts/CartContext';
 
 
 function App() {
 	return (
         <AuthContextProvider>
-            <div className="App">
-                <Navbar/>
-                
-                <div className="">
-                    <Switch>
+            <CartContextProvider>
+                <div className="App">
+                    <Navbar/>
+                    
+                    <div className="">
+                        <Switch>
 
-                        <Route exact path="/" component={Home}/>
+                            <Route exact path="/" component={Home}/>
 
-                        <Route exact path="/products" component={ProductsList}/>
+                            <Route exact path="/products" component={ProductsList}/>
 
-                        <Route exact path="#">
-                            Wishlist
-                        </Route>
+                            <Route exact path="#">
+                                Wishlist
+                            </Route>
 
-                        <Route exact path="/order">
-                            Bag
-                        </Route>
+                            <Route exact path="/order">
+                                Bag
+                            </Route>
 
-                        <Route exact path="/login" component={Login}/>
+                            <Route exact path="/login" component={Login}/>
 
-                        <Route exact path="/user" component={CreateUser}/>
+                            <Route exact path="/user" component={CreateUser}/>
 
-                        <Route exact path="/profile" component={Profile}/>
+                            <Route exact path="/profile" component={Profile}/>
 
-                        <Redirect to="/" />
-                    </Switch>
+                            <Redirect to="/" />
+                        </Switch>
+                    </div>
                 </div>
-            </div>
+            </CartContextProvider>
         </AuthContextProvider>
     );
 }
