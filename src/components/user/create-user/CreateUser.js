@@ -145,7 +145,7 @@ function CreateUser() {
     <div className="row m-2">
       <form className="col-12 col-sm-10" onSubmit={handleSubmit}>
 
-        <div className="inpout-group flex-nowrap">
+        <div className="inpout-group flex-nowrap mb-1">
           <span className="input-group-text col-2" id="addon-wrapping">
             <i className="fa fa-user fa-fw" aria-hidden="true" />
           </span>
@@ -228,7 +228,7 @@ function CreateUser() {
 
         <div className="inpout-group mb-1">
           <span className="input-group-text col-2">
-            <i className="fa fa-location-arrow" aria-hidden="true" />
+            <i className="fa fa-location-arrow fa-fw" aria-hidden="true" />
           </span>
           <input
             name="address"
@@ -248,7 +248,7 @@ function CreateUser() {
 
         <div className="inpout-group mb-1">
           <span className="input-group-text col-2">
-            <i className="fa fa-key" aria-hidden="true" />
+            <i className="fa fa-key fa-fw" aria-hidden="true" />
           </span>
           <input
             name="password"

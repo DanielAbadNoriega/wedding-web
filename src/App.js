@@ -8,6 +8,7 @@ import CreateUser from "./components/user/create-user/CreateUser"
 import Profile from './components/user/profile/Profile';
 import { AuthContextProvider } from './contexts/AuthContext';
 import { CartContextProvider } from './contexts/CartContext';
+import Cart from './components/misc/cart/Cart';
 
 
 function App() {
@@ -28,9 +29,7 @@ function App() {
                                 Wishlist
                             </Route>
 
-                            <Route exact path="/order">
-                                Bag
-                            </Route>
+                            <Route exact path="/order" component={Cart} />
 
                             <Route exact path="/login" component={Login}/>
 

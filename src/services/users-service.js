@@ -6,12 +6,15 @@ const logout= () => http.post('/logout')
 
 const create = (user) => http.post('/users', user)
 
+const remove = (id) => http.delete(`/users/${id}`)
+
 const profile = () => http.get('/profile')
 
 const service = {
     login,
     logout,
     create,
+    remove,
     profile
 };
 
