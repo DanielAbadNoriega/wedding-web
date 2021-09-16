@@ -6,21 +6,26 @@ export const AuthContext = React.createContext();
 
 export function AuthContextProvider({ children }) {
     const history = useHistory()
-    const [user, setUser] = useState()
+    const [user, setUser] = useState(localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : undefined)
 
     useEffect(() => {
-        const userId = localStorage.getItem('user')
+        const storedUser = localStorage.getItem('user')
 
-        if (!userId) {
+        if (!storedUser) {
             history.push('/login')
         } else {
             userService.profile()
-                .then((user) =>setUser(user))
-        } 
-    }, [history])
+                .then(user => {
+                    if (JSON.stringify(user) !== JSON.stringify(storedUser)) {
+                        setUser(user)
+                    }
+                })
+        }
+        
+    })
 
     function login(user) {
-        localStorage.setItem('user', user.id)
+        localStorage.setItem('user', JSON.stringify(user))
         setUser(user)
     }
 
