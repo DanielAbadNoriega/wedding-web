@@ -17,7 +17,7 @@ function ProductItem({
 }) {
   const productContext = useContext(ProductContext);
   const { detail, productDetail } = productContext;
-  const { createProduct } = useContext(CartContext);
+  const { createCart } = useContext(CartContext);
   const [product] = useState({
     title: title,
     category: category,
@@ -26,12 +26,12 @@ function ProductItem({
     images: images,
     rating: rating,
     comments: comments,
-    id: id
+    id: id,
   });
 
   //para crear la cesta!!
-  const handleCreateProduct = () => {
-    createProduct({
+  const handleCreateCart = () => {
+    createCart({
       title,
       category,
       description,
@@ -46,7 +46,7 @@ function ProductItem({
 
   const handleDetailProduct = () => {
     productDetail(product);
-    detail(id)
+    detail(id);
   };
 
   return (
@@ -67,7 +67,7 @@ function ProductItem({
         </NavLink>
         <button
           className="btn btn-success fa fa-shopping-bag m-3"
-          onClick={handleCreateProduct}
+          onClick={handleCreateCart}
         ></button>
       </div>
     </div>

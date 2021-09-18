@@ -7,28 +7,37 @@ function NavProfile() {
   const auth = useContext(AuthContext);
 
   return (
-    <>
-      {auth.user ? (
-        <div className="container-fluid" id="navbarTogglerDemo03">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            {auth.user?.name && (
+    <div className="btn-group dropup">
+      <button
+        type="button"
+        className="btn btn-secondary dropdown-toggle fa fa-user-circle-o"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      ></button>
+      <ul className="dropdown-menu bg-light">
+        {auth.user ? (
+          <div className="container-fluid col-0" id="navbarTogglerDemo03">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <span className="nav-link fa fa-user-circle-o me-3"> Hi {auth.user?.name}!</span>
+                <NavLink
+                  className="nav-link fa fa-address-card fa-fw text-muted"
+                  exact
+                  to="/profile"
+                >
+                  {" "}
+                  Profile
+                </NavLink>
               </li>
-            )}
-            <li className="nav-item">
-              <NavLink className="nav-link fa fa-address-card fa-fw" exact to="/profile"> Profile
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <Logout />
-            </li>
-          </ul>
-        </div>
-      ) : (
-        <NavLink className="nav-link fa fa-sign-in" exact to="/login" />
-      )}
-    </>
+              <li className="nav-item">
+                <Logout />
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <NavLink className="nav-link fa fa-sign-in" exact to="/login" />
+        )}
+      </ul>
+    </div>
   );
 }
 

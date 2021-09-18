@@ -4,4 +4,16 @@ a.active {
 
 body {
   padding: 20px;
+  background-image: url("./data/home.png") no-repeat fixed center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+  width: 100% ;;
+/*   background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover; */
 }
+

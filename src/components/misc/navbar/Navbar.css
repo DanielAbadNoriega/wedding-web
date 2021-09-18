@@ -1,0 +1,17 @@
+nav li {
+    color: grey;
+}
+
+nav .fa-shopping-bag {
+    color: #bea46d !important;
+
+}
+
+NavLink .fa{
+    color: #bea46d
+}
+
+.Navbrand {
+    border: black 1px;
+    margin-left: 30px;
+}
