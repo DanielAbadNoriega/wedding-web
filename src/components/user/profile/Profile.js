@@ -1,13 +1,18 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import DeleteUser from "../delete-user/DeleteUser";
+import "./Profile.css"
 
 function Profile() {
   const authContext = useContext(AuthContext);
-  const { user } = authContext;
+  const { user, remove } = authContext;
 
+  function handleDeleteUser() {
+    remove()
+  }
+  
   return (
-    <fieldset disabled>
+    <fieldset disabled className="Profile">
       <div>
         <div className="input-group flex-nowrap mt-2">
           <span className="input-group-text" id="addon-wrapping">
@@ -69,7 +74,13 @@ function Profile() {
           />
         </div>
       </div>
-      <DeleteUser />
+      <div className="Link mt-2">
+
+        <DeleteUser onDeleteUser={handleDeleteUser}/>
+      
+      </div>
+        
+      
     </fieldset>
   );
 }

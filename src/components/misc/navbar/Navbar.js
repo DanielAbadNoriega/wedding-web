@@ -22,7 +22,7 @@ function Navbar() {
           <ul className="navbar-nav">
             <li className="nav-item">
               <NavLink
-                className="nav-link fa fa-home"
+                className="nav-link fa fa-home fa-fw"
                 aria-hidden="true"
                 exact
                 to="/"
@@ -33,7 +33,7 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <NavLink
-                className="nav-link fa fa-gift"
+                className="nav-link fa fa-gift fa-fw"
                 aria-hidden="true"
                 exact
                 to="/products"
@@ -43,13 +43,8 @@ function Navbar() {
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link" exact to="#">
-                Wishlist
-              </NavLink>
-            </li>
-            <li className="nav-item">
               <NavLink
-                className="nav-link fa fa-shopping-bag"
+                className="nav-link fa fa-shopping-bag fa-fw"
                 aria-hidden="true"
                 exact
                 to="/order"

@@ -8,6 +8,8 @@ const create = (user) => http.post('/users', user)
 
 const remove = (id) => http.delete(`/users/${id}`)
 
+const edit = (id) => http.put(`/users/${id}`)
+
 const profile = () => http.get('/profile')
 
 const service = {
@@ -15,7 +17,8 @@ const service = {
     logout,
     create,
     remove,
-    profile
+    profile,
+    edit
 };
 
 export default service;

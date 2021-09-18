@@ -114,7 +114,7 @@ function CreateUser() {
       userService
         .create(user)
         .then(() => {
-          history.push("/");
+          history.push("/login");
         })
         .catch((error) => {
           const { errors, message } = error.response?.data || error;

@@ -13,17 +13,11 @@ function NavProfile() {
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             {auth.user?.name && (
               <li className="nav-item">
-                <span className="nav-link me-3">Hi {auth.user?.name}!</span>
+                <span className="nav-link fa fa-user-circle-o me-3"> Hi {auth.user?.name}!</span>
               </li>
             )}
             <li className="nav-item">
-              <NavLink className="nav-link" exact to="/profile">
-                Profile <span className="sr-only">(current)</span>
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink className="nav-link" to="#">
-                My orders
+              <NavLink className="nav-link fa fa-address-card fa-fw" exact to="/profile"> Profile
               </NavLink>
             </li>
             <li className="nav-item">

@@ -14,8 +14,8 @@ function Cart() {
           {cart.products.length}
         </span>
       </button>
-      {cart.products.map((product) => (
-        <div className="box" id={product.id}>
+      {cart.products.map((product, i) => (
+        <div className="box" key={i}>
           <article className="media">
             <div className="media-left">
               <figure className="ProductImage image">

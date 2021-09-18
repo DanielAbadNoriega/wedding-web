@@ -1,5 +1,5 @@
 import productsService from "../../../services/products-service";
-import Searchbar from "../../search/Searchbar";
+import Searchbar from "../../misc/search/Searchbar";
 import ProductItem from "../product-item/ProductItem";
 import { useEffect, useState} from 'react';
 
