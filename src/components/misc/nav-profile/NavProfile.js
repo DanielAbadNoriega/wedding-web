@@ -34,7 +34,7 @@ function NavProfile() {
             </ul>
           </div>
         ) : (
-          <NavLink className="nav-link fa fa-sign-in" exact to="/login" />
+          <NavLink className="nav-link fa fa-sign-in text-muted" exact to="/login" />
         )}
       </ul>
     </div>

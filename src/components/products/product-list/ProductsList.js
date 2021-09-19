@@ -23,12 +23,15 @@ function ProductsList() {
   return (
     <div>
       <Searchbar value={search} onChange={(text) => handleSearch(text)} />
-      <div className="row row-cols-1 row-cols-md-2 g-4 mt-2">
-        <div className="col">
-          {products.length !== 0 &&
-            products.map((product) => (
-              <ProductItem {...product} key={product.id} />
-            ))}
+
+      <div className="container">
+        <div className="row row-cols-1 mt-2">
+          <div className="row g-0">
+            {products.length !== 0 &&
+              products.map((product) => (
+                <ProductItem {...product} key={product.id} />
+              ))}
+          </div>
         </div>
       </div>
     </div>

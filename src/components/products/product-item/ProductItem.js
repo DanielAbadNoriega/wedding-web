@@ -50,27 +50,38 @@ function ProductItem({
   };
 
   return (
-    <div className="ProductItem card mt-2">
-      <img src={images} alt={title} className="card-img-top" />
-      <div className="card-body">
-        <h5 className="card-title">{title}</h5>
-        <p className="card-text">Price: {price}€</p>
-        {rating && <p className="card-text">Rating: {rating}</p>}
-        {comments && <p className="card-text">comments: {comments}</p>}
-        <NavLink
-          exact
-          to="/detail"
-          className="btn btn-primary"
-          onClick={handleDetailProduct}
-        >
-          More details
-        </NavLink>
-        <button
-          className="btn btn-success fa fa-shopping-bag m-3"
-          onClick={handleCreateCart}
-        ></button>
+      <div className="ProductItem col-5 card border-light ms-3 mb-3 mt-2">
+        <div className="row g-0">
+          <div className="card-header bg-transparent border-light col-md-4">
+            <img src={images} alt={title} className="card-img-top" />
+          </div>
+        </div>
+
+        <div className="col-md-8">
+          <div className="card-body bg-transparent">
+            <h5 className="card-title">{title}</h5>
+            <p className="card-text">Price: {price}€</p>
+            {rating && <p className="card-text">Rating: {rating}</p>}
+            {comments && <p className="card-text">comments: {comments}</p>}
+          </div>
+        </div>
+
+        <div className="card-footer bg-transparent border-light">
+          {" "}
+          <NavLink
+            exact
+            to="/detail"
+            className="btn btn-primary"
+            onClick={handleDetailProduct}
+          >
+            More details
+          </NavLink>
+          <button
+            className="btn btn-success fa fa-shopping-bag m-3"
+            onClick={handleCreateCart}
+          ></button>
+        </div>
       </div>
-    </div>
   );
 }
 
