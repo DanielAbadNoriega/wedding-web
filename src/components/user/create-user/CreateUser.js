@@ -33,13 +33,13 @@ const validations = {
     }
     return message;
   },
-  avatar: (value) => {
+/*   avatar: (value) => {
     let message;
     if (!value) {
       message = "Avatar is required";
     }
     return message;
-  },
+  }, */
   address: (value) => {
     let message;
     if (!value) {
@@ -72,7 +72,7 @@ function CreateUser() {
     name: validations.name(""),
     phone: validations.phone(""),
     email: validations.email(""),
-    avatar: validations.avatar(""),
+/*     avatar: validations.avatar(""), */
     address: validations.address(""),
     password: validations.password(""),
   });
@@ -206,7 +206,7 @@ function CreateUser() {
           )}
         </div>
 
-        <div className="inpout-group mb-1">
+{/*         <div className="inpout-group mb-1">
           <span className="input-group-text col-2">
             <i className="fa fa-camera-retro fa-fw" aria-hidden="true" />
           </span>
@@ -224,7 +224,7 @@ function CreateUser() {
           {errors.avatar && select.avatar && (
             <div className="invalid-feedback">{errors.avatar}</div>
           )}
-        </div>
+        </div> */}
 
         <div className="inpout-group mb-1">
           <span className="input-group-text col-2">

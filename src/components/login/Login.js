@@ -27,11 +27,11 @@ function Login() {
   }
 
   return (
-    <div>
+    <div className="container mt-3">
       <form className="col-12 col-sm-10" onSubmit={handleSubmit}>
         <div className="mb-2">
           <span className="input-group-text col-2">
-            <i className="fa fa-envelope-o" aria-hidden="true" />
+            <i className="fa fa-envelope-o fa-fw" aria-hidden="true" />
           </span>
           <input
             name="email"
@@ -46,7 +46,7 @@ function Login() {
         </div>
         <div className="mb-2">
           <span className="input-group-text col-2">
-            <i className="fa fa-key" aria-hidden="true" />
+            <i className="fa fa-key fa-fw" aria-hidden="true" />
           </span>
           <input
             name="password"
